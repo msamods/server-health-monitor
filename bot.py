@@ -15,9 +15,9 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 if not config.BOT_TOKEN:
-    logger.error("BOT_TOKEN is not set in .env! Please set your Telegram bot token.")
+    logger.warning("BOT_TOKEN is not set in .env! Please set your Telegram bot token.")
 
-bot = TeleBot(config.BOT_TOKEN, parse_mode="HTML")
+bot = TeleBot(config.BOT_TOKEN if config.BOT_TOKEN else "123456789:AAFakeTokenForModuleImportOnly", parse_mode="HTML")
 
 
 def require_admin(func):
