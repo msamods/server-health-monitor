@@ -1,0 +1,16 @@
+[Unit]
+Description=VPS Server Health & Monitor Telegram Bot
+After=network.target docker.service
+Wants=docker.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/server-health-monitor
+EnvironmentFile=/opt/server-health-monitor/.env
+ExecStart=/opt/server-health-monitor/venv/bin/python bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

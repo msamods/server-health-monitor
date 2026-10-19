@@ -1,0 +1,20 @@
+# Environment variables & secrets (Never commit secrets!)
+.env
+
+# Virtual Environments
+venv/
+env/
+.venv/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Logs
+*.log
+
+# Operating System files
+.DS_Store
+Thumbs.db

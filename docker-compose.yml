@@ -1,0 +1,13 @@
+services:
+  server-health-monitor:
+    build: .
+    container_name: server-health-monitor
+    restart: unless-stopped
+    pid: "host"
+    network_mode: "host"
+    env_file:
+      - .env
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
+      - /:/host:ro
